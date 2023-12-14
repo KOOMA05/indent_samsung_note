@@ -1,0 +1,22 @@
+mode = 0
+CtrlWin(GetID(GET_THISUWSC_WIN), HIDE)
+while true
+    ifb getid("samsung notes")=getid(GET_ACTIVE_WIN) and mode=0
+        mode = 1
+        sethotkey(VK_TAB,,"indent")
+        sethotkey(VK_TAB,MOD_SHIFT,"unindent")
+    elseif mode=1 and getid("samsung notes") <> getid(GET_ACTIVE_WIN)
+        mode=0
+        sethotkey(VK_TAB)
+        sethotkey(VK_TAB,MOD_SHIFT)
+    endif
+wend
+
+procedure indent()
+    clkitem(getid("samsung notes"),"インデント",CLK_BTN)
+    clkitem(getid("samsung notes"),"indent",CLK_BTN)
+fend
+procedure unindent()
+    clkitem(getid("samsung notes"),"インデント解除",CLK_BTN)
+    clkitem(getid("samsung notes"),"outdent",CLK_BTN)
+fend
