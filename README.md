@@ -1,0 +1,2 @@
+# indent_samsung_note
+samsungnote のインデントをキーボード操作で行えるようにします
